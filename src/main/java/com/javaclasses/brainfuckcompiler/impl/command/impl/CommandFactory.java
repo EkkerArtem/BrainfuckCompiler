@@ -10,8 +10,9 @@ public class CommandFactory {
     private final Map<Character, BrainfuckCommands> commands = new HashMap<>();
 
     public CommandFactory() {
-        commands.put('+', new IncrementCurrentValue());
+        commands.put('+', new IncrementCommand());
         commands.put('.', new OutputCommand());
+        commands.put('-', new DecrementCommand());
     }
 
     public BrainfuckCommands getCommand(Character command) {
