@@ -5,9 +5,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class IncrementCurrentValue implements BrainfuckCommands {
+/**
+ * Class for performing the brainfuck language increment operation.
+ * It increments the byte at the data pointer.
+ * See {@link BrainfuckCommands} "+" character.
+ */
+public class IncrementCommand implements BrainfuckCommands {
 
-    private static final Logger log = LoggerFactory.getLogger(IncrementCurrentValue.class);
+    private static final Logger log = LoggerFactory.getLogger(IncrementCommand.class);
 
     @Override
     public void perform(InstructionPointer instructionPointer) {
