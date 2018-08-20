@@ -18,7 +18,7 @@ public class CommandFactory {
         commands.put('-', new DecrementCommand());
         commands.put('>', new MoveRightCommand());
         commands.put('<', new MoveLeftCommand());
-        commands.put(OPENING_BRACKET, new OppeningBracketCommand());
+        commands.put(OPENING_BRACKET, new OpeningBracketCommand());
         commands.put(CLOSING_BRACKET, new ClosingBracketCommand());
     }
 
