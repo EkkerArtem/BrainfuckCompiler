@@ -33,4 +33,13 @@ class IncrementCommandTest {
 
         Assertions.assertEquals("H0", outContent.toString());
     }
+
+    @Test
+    void testHelloWord() {
+
+        compilerImpl.compile("++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.");
+
+        Assertions.assertEquals("Hello World!", outContent.toString().trim());
+    }
+
 }
