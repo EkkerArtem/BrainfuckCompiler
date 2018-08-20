@@ -42,4 +42,11 @@ class IncrementCommandTest {
         Assertions.assertEquals("Hello World!", outContent.toString().trim());
     }
 
+    @Test
+    void testLoops() {
+
+        compilerImpl.compile("+++[>++++[>+++[>++>+++>+<<<-]<-]<-]>>>++++.>+++..+.+++.>---.");
+
+        Assertions.assertEquals("Loops!", outContent.toString().trim());
+    }
 }
