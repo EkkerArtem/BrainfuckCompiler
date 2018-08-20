@@ -14,6 +14,7 @@ public class CommandFactory {
         commands.put('.', new OutputCommand());
         commands.put('-', new DecrementCommand());
         commands.put('>', new MoveRightCommand());
+        commands.put('<', new MoveLeftCommand());
     }
 
     public BrainfuckCommands getCommand(Character command) {
