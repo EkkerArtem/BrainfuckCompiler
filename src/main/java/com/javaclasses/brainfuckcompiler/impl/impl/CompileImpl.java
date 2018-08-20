@@ -15,15 +15,30 @@ public class CompileImpl implements Compile {
 
     private static final Logger log = LoggerFactory.getLogger(CompileImpl.class);
 
+    private String inputted;
+
     @Override
-    public void compile(String input) {
-
-        log.info("Inputted string have been read");
-
+    public void read(String input) {
+        StringBuilder stringBuilder = new StringBuilder();
         InstructionPointer instructionPointer = new InstructionPointer(65555, input);
-
         while (input.length() > instructionPointer.getCurrentChar()) {
-            commandDispatcher.getCommand(input.charAt(instructionPointer.getCurrentChar())).perform(instructionPointer);
+            stringBuilder.append(input.charAt(instructionPointer.getCurrentChar()));
+            instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() + 1);
+        }
+        log.info("Inputted string have been read");
+        inputted = stringBuilder.toString();
+    }
+
+
+    @Override
+    public void compile() {
+
+
+        InstructionPointer instructionPointer = new InstructionPointer(65555, inputted);
+
+        while (inputted.length() > instructionPointer.getCurrentChar()) {
+
+            commandDispatcher.getCommand(inputted.charAt(instructionPointer.getCurrentChar())).perform(instructionPointer);
             instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() + 1);
         }
         log.info("Result obtained");
