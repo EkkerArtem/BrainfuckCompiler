@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Class for performing the brainfuck language increment operation.
+ * Class for performing the brainfuck language decrement operation.
  * It decrements the byte at the data pointer.
  * See {@link BrainfuckCommands} "-" character.
  */

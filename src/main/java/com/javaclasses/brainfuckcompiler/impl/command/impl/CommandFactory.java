@@ -13,6 +13,7 @@ public class CommandFactory {
         commands.put('+', new IncrementCommand());
         commands.put('.', new OutputCommand());
         commands.put('-', new DecrementCommand());
+        commands.put('>', new MoveRightCommand());
     }
 
     public BrainfuckCommands getCommand(Character command) {
