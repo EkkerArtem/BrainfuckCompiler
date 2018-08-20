@@ -15,8 +15,8 @@ public class OutputCommand implements BrainfuckCommands {
 
     @Override
     public void perform(InstructionPointer instructionPointer) {
-        char curentResult = (char) (instructionPointer.getMemory()[instructionPointer.getDataPointer()]);
-        System.out.print(curentResult);
+        char result = (char) (instructionPointer.getMemory()[instructionPointer.getDataPointer()]);
+        System.out.print(result);
 
         log.debug("Current position value displayed");
     }
