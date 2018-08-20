@@ -17,10 +17,10 @@ public class MoveRightCommand implements BrainfuckCommands {
     public void perform(InstructionPointer instructionPointer) {
         if (instructionPointer.getDataPointer() == instructionPointer.getLength() - 1) {
             instructionPointer.setDataPointer(0);
-            log.debug("Value incremented");
+            log.debug("Moved left");
         } else {
             instructionPointer.setDataPointer(instructionPointer.getDataPointer() + 1);
         }
-        log.debug("Value incremented");
+        log.debug("Moved left");
     }
 }
