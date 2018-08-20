@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClosingBracketCommand implements BrainfuckCommands {
 
-    private static final Logger log = LoggerFactory.getLogger( ClosingBracketCommand.class );
+    private static final Logger log = LoggerFactory.getLogger(ClosingBracketCommand.class);
 
     @Override
     public void perform(InstructionPointer instructionPointer) {
@@ -26,7 +26,7 @@ public class ClosingBracketCommand implements BrainfuckCommands {
         }
     }
 
-    private void innerBracketsCheck(InstructionPointer instructionPointer){
+    private void innerBracketsCheck(InstructionPointer instructionPointer) {
         int countOfBrackets = 0;
         while (countOfBrackets > 0 || instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) != CommandFactory.OPENING_BRACKET) {
             if (instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) == CommandFactory.CLOSING_BRACKET) {

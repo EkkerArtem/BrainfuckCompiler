@@ -1,5 +1,6 @@
 package com.javaclasses.brainfuckcompiler.impl.command.impl;
 
+import com.javaclasses.brainfuckcompiler.impl.CommandExeption;
 import com.javaclasses.brainfuckcompiler.impl.command.BrainfuckCommands;
 
 import java.util.HashMap;
@@ -22,7 +23,10 @@ public class CommandFactory {
         commands.put(CLOSING_BRACKET, new ClosingBracketCommand());
     }
 
-    public BrainfuckCommands getCommand(Character command) {
+    public BrainfuckCommands getCommand(Character command) throws CommandExeption {
+        if (!commands.containsKey(command)) {
+            throw new CommandExeption("No such command found");
+        }
         return commands.get(command);
     }
 }

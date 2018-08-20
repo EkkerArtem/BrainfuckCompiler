@@ -30,7 +30,8 @@ class CommandTest {
     @Test
     void testsdent() throws CommandExeption {
         compilerImpl.read("?");
-        Assertions.assertThrows(NullPointerException.class, compilerImpl::compile);
+        Assertions.assertThrows(CommandExeption.class, compilerImpl::compile);
+
     }
 
     @Test
