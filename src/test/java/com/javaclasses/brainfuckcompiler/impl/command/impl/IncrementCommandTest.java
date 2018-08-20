@@ -20,24 +20,30 @@ class IncrementCommandTest {
 
     @Test
     void testIncrement() {
-
-        compilerImpl.compile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.");
+        compilerImpl.read("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.");
+        compilerImpl.compile();
 
         Assertions.assertEquals("H", outContent.toString());
     }
 
     @Test
-    void testIncrementAndMoverRight() {
+    void testMultiCompileCheck() {
 
-        compilerImpl.compile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.>++++++++++++++++++++++++++++++++++++++++++++++++.");
+        compilerImpl.read("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.>++++++++++++++++++++++++++++++++++++++++++++++++.");
+        compilerImpl.compile();
+        compilerImpl.compile();
+        compilerImpl.compile();
+        compilerImpl.compile();
+        compilerImpl.compile();
 
-        Assertions.assertEquals("H0", outContent.toString());
+        Assertions.assertEquals("H0H0H0H0H0", outContent.toString());
     }
 
     @Test
     void testHelloWord() {
 
-        compilerImpl.compile("++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.");
+        compilerImpl.read("++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.");
+        compilerImpl.compile();
 
         Assertions.assertEquals("Hello World!", outContent.toString().trim());
     }
@@ -45,7 +51,8 @@ class IncrementCommandTest {
     @Test
     void testLoops() {
 
-        compilerImpl.compile("+++[>++++[>+++[>++>+++>+<<<-]<-]<-]>>>++++.>+++..+.+++.>---.");
+        compilerImpl.read("+++[>++++[>+++[>++>+++>+<<<-]<-]<-]>>>++++.>+++..+.+++.>---.");
+        compilerImpl.compile();
 
         Assertions.assertEquals("Loops!", outContent.toString().trim());
     }
