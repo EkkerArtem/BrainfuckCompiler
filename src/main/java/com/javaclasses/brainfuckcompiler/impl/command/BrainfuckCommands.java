@@ -24,5 +24,5 @@ public interface BrainfuckCommands {
      * @param instructionPointer instruction pointer that stores information needed to perform brainfuck operations
      *                           like data pointer position and current char on inputted brainfuck code.
      */
-    void compile(InstructionPointer instructionPointer);
+    void perform(InstructionPointer instructionPointer);
 }
