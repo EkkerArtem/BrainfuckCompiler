@@ -9,7 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 
-class IncrementCurrentValueTest {
+class IncrementCommandTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     private final Compile compilerImpl = new CompileImpl(new CommandFactory());
