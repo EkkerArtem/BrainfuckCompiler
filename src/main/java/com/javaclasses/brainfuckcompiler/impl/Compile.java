@@ -14,6 +14,7 @@ public interface Compile {
     /**
      * Method for reading the input string. It return the input string so it can be used to compile it
      * as many times as wanted.
+     *
      * @param input inputData is an inputted brainfuck code.
      */
     void read(String input);
