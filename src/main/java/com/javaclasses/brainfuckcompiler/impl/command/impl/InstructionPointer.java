@@ -1,5 +1,13 @@
 package com.javaclasses.brainfuckcompiler.impl.command.impl;
 
+/**
+ * Class that imitates the work of instruction pointer : an instruction pointer begins at the first command,
+ * and each command it points to is executed, after which it normally moves forward to the next command.
+ * The program terminates when the instruction pointer moves past the last command.
+ *
+ * For more info see <a href="https://en.wikipedia.org/wiki/Brainfuck#Language_design"></a>
+ * and <a href="https://www.quora.com/What-is-an-instruction-pointer"></a>.
+ */
 public class InstructionPointer {
     private int dataPointer;
     private int length;
