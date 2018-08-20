@@ -19,10 +19,18 @@ class IncrementCommandTest {
     }
 
     @Test
-    void testIncrementValue() {
+    void testIncrement() {
 
         compilerImpl.compile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.");
 
         Assertions.assertEquals("H", outContent.toString());
+    }
+
+    @Test
+    void testIncrementAndMoverRight() {
+
+        compilerImpl.compile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.>++++++++++++++++++++++++++++++++++++++++++++++++.");
+
+        Assertions.assertEquals("H0", outContent.toString());
     }
 }
