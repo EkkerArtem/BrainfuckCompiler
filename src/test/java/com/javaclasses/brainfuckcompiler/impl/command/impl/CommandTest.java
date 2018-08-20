@@ -28,7 +28,7 @@ class CommandTest {
     }
 
     @Test
-    void testsdent() throws CommandException {
+    void testIllegarArgument() throws CommandException {
         compilerImpl.read("?");
         Assertions.assertThrows(CommandException.class, compilerImpl::compile);
 
