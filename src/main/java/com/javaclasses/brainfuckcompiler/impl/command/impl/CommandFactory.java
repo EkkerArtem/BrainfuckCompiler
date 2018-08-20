@@ -19,6 +19,7 @@ public class CommandFactory {
         commands.put('>', new MoveRightCommand());
         commands.put('<', new MoveLeftCommand());
         commands.put(OPENING_BRACKET, new OppeningBracketCommand());
+        commands.put(CLOSING_BRACKET, new ClosingBracketCommand());
     }
 
     public BrainfuckCommands getCommand(Character command) {
