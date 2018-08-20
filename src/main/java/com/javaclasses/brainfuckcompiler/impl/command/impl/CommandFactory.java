@@ -7,6 +7,9 @@ import java.util.Map;
 
 public class CommandFactory {
 
+    public static final Character CLOSING_BRACKET = ']';
+    public static final Character OPENING_BRACKET = '[';
+
     private final Map<Character, BrainfuckCommands> commands = new HashMap<>();
 
     public CommandFactory() {
@@ -15,6 +18,7 @@ public class CommandFactory {
         commands.put('-', new DecrementCommand());
         commands.put('>', new MoveRightCommand());
         commands.put('<', new MoveLeftCommand());
+        commands.put(OPENING_BRACKET, new OppeningBracketCommand());
     }
 
     public BrainfuckCommands getCommand(Character command) {
