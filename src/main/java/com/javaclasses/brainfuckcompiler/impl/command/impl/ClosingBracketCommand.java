@@ -16,20 +16,25 @@ public class ClosingBracketCommand implements BrainfuckCommands {
 
     @Override
     public void perform(InstructionPointer instructionPointer) {
-        int countOfBrackets = 0;
+
 
         if (instructionPointer.getMemory()[instructionPointer.getDataPointer()] != 0) {
             instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() - 1);
-            while (countOfBrackets > 0 || instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) != CommandFactory.OPENING_BRACKET) {
-                if (instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) == CommandFactory.CLOSING_BRACKET) {
-                    countOfBrackets++;
-                } else if (instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) == CommandFactory.OPENING_BRACKET) {
-                    countOfBrackets--;
-                }
-                instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() - 1);
-            }
+            innerBracketsCheck(instructionPointer);
             instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() - 1);
             log.debug("[ operation done");
+        }
+    }
+
+    private void innerBracketsCheck(InstructionPointer instructionPointer){
+        int countOfBrackets = 0;
+        while (countOfBrackets > 0 || instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) != CommandFactory.OPENING_BRACKET) {
+            if (instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) == CommandFactory.CLOSING_BRACKET) {
+                countOfBrackets++;
+            } else if (instructionPointer.getCode().charAt(instructionPointer.getCurrentChar()) == CommandFactory.OPENING_BRACKET) {
+                countOfBrackets--;
+            }
+            instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() - 1);
         }
     }
 }
