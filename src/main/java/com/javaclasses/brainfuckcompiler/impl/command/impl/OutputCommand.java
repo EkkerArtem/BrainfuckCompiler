@@ -14,7 +14,7 @@ public class OutputCommand implements BrainfuckCommands {
     private static final Logger log = LoggerFactory.getLogger(OutputCommand.class);
 
     @Override
-    public void perform(InstructionPointer instructionPointer) {
+    public void performOperation(InstructionPointer instructionPointer) {
         char result = (char) (instructionPointer.getMemory()[instructionPointer.getDataPointer()]);
         System.out.print(result);
 

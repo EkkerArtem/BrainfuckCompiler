@@ -4,7 +4,7 @@ import com.javaclasses.brainfuckcompiler.impl.command.impl.InstructionPointer;
 
 /**
  * An interface for performing brainfuck language operations.
- * It moves instruction pointer and perform brainfuck operations one by one.
+ * It moves instruction pointer and performOperation brainfuck operations one by one.
  * <p>
  * It supports such operations as :
  * ">" increment the data pointer (to point to the next cell to the right),
@@ -21,8 +21,8 @@ public interface BrainfuckCommands {
     /**
      * Method for performing brainfuck language operations {@link BrainfuckCommands}.
      *
-     * @param instructionPointer instruction pointer that stores information needed to perform brainfuck operations
+     * @param instructionPointer instruction pointer that stores information needed to performOperation brainfuck operations
      *                           like data pointer position and current char on inputted brainfuck code.
      */
-    void perform(InstructionPointer instructionPointer);
+    void performOperation(InstructionPointer instructionPointer);
 }

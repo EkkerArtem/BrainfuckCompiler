@@ -14,7 +14,7 @@ public class IncrementCommand implements BrainfuckCommands {
     private static final Logger log = LoggerFactory.getLogger(IncrementCommand.class);
 
     @Override
-    public void perform(InstructionPointer instructionPointer) {
+    public void performOperation(InstructionPointer instructionPointer) {
         instructionPointer.getMemory()[instructionPointer.getDataPointer()]++;
 
         log.debug("Value incremented");

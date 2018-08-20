@@ -15,7 +15,7 @@ public class OpeningBracketCommand implements BrainfuckCommands {
     private static final Logger log = LoggerFactory.getLogger(OpeningBracketCommand.class);
 
     @Override
-    public void perform(InstructionPointer instructionPointer) {
+    public void performOperation(InstructionPointer instructionPointer) {
 
         if (instructionPointer.getMemory()[instructionPointer.getDataPointer()] == 0) {
             instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() + 1);

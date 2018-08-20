@@ -14,7 +14,7 @@ public class MoveRightCommand implements BrainfuckCommands {
     private static final Logger log = LoggerFactory.getLogger(MoveRightCommand.class);
 
     @Override
-    public void perform(InstructionPointer instructionPointer) {
+    public void performOperation(InstructionPointer instructionPointer) {
         if (instructionPointer.getDataPointer() == instructionPointer.getLength() - 1) {
             instructionPointer.setDataPointer(0);
             log.debug("Moved left");

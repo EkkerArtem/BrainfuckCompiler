@@ -38,7 +38,7 @@ public class CompileImpl implements Compile {
 
         while (inputted.length() > instructionPointer.getCurrentChar()) {
 
-            commandDispatcher.getCommand(inputted.charAt(instructionPointer.getCurrentChar())).perform(instructionPointer);
+            commandDispatcher.getCommand(inputted.charAt(instructionPointer.getCurrentChar())).performOperation(instructionPointer);
             instructionPointer.setCurrentChar(instructionPointer.getCurrentChar() + 1);
         }
         log.info("Result obtained");
