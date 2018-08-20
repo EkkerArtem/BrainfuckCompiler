@@ -1,6 +1,6 @@
 package com.javaclasses.brainfuckcompiler.impl.command.impl;
 
-import com.javaclasses.brainfuckcompiler.impl.CommandExeption;
+import com.javaclasses.brainfuckcompiler.impl.CommandException;
 import com.javaclasses.brainfuckcompiler.impl.Compile;
 import com.javaclasses.brainfuckcompiler.impl.impl.CompileImpl;
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +20,7 @@ class CommandTest {
     }
 
     @Test
-    void testIncrement() throws CommandExeption {
+    void testIncrement() throws CommandException {
         compilerImpl.read("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.");
         compilerImpl.compile();
 
@@ -28,14 +28,14 @@ class CommandTest {
     }
 
     @Test
-    void testsdent() throws CommandExeption {
+    void testsdent() throws CommandException {
         compilerImpl.read("?");
-        Assertions.assertThrows(CommandExeption.class, compilerImpl::compile);
+        Assertions.assertThrows(CommandException.class, compilerImpl::compile);
 
     }
 
     @Test
-    void testMultiCompileCheck() throws CommandExeption {
+    void testMultiCompileCheck() throws CommandException {
 
         compilerImpl.read("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.>++++++++++++++++++++++++++++++++++++++++++++++++.");
         compilerImpl.compile();
@@ -48,7 +48,7 @@ class CommandTest {
     }
 
     @Test
-    void testHelloWord() throws CommandExeption {
+    void testHelloWord() throws CommandException {
 
         compilerImpl.read("++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.");
         compilerImpl.compile();
@@ -57,7 +57,7 @@ class CommandTest {
     }
 
     @Test
-    void testLoops() throws CommandExeption {
+    void testLoops() throws CommandException {
 
         compilerImpl.read("+++[>++++[>+++[>++>+++>+<<<-]<-]<-]>>>++++.>+++..+.+++.>---.");
         compilerImpl.compile();

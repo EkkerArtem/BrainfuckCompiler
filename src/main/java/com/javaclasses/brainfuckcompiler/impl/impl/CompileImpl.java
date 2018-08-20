@@ -1,6 +1,6 @@
 package com.javaclasses.brainfuckcompiler.impl.impl;
 
-import com.javaclasses.brainfuckcompiler.impl.CommandExeption;
+import com.javaclasses.brainfuckcompiler.impl.CommandException;
 import com.javaclasses.brainfuckcompiler.impl.Compile;
 import com.javaclasses.brainfuckcompiler.impl.command.impl.CommandFactory;
 import com.javaclasses.brainfuckcompiler.impl.command.impl.InstructionPointer;
@@ -32,7 +32,7 @@ public class CompileImpl implements Compile {
 
 
     @Override
-    public void compile() throws CommandExeption {
+    public void compile() throws CommandException {
 
         InstructionPointer instructionPointer = new InstructionPointer(65555, inputted);
 
