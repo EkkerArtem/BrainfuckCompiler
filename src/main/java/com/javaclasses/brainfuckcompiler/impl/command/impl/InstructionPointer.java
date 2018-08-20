@@ -5,8 +5,7 @@ package com.javaclasses.brainfuckcompiler.impl.command.impl;
  * and each command it points to is executed, after which it normally moves forward to the next command.
  * The program terminates when the instruction pointer moves past the last command.
  * <p>
- * For more info see <a href="https://en.wikipedia.org/wiki/Brainfuck#Language_design"></a>
- * and <a href="https://www.quora.com/What-is-an-instruction-pointer"></a>.
+ * For more info see <a href="https://en.wikipedia.org/wiki/Brainfuck#Language_design"></a>.
  */
 public class InstructionPointer {
     private int dataPointer;
